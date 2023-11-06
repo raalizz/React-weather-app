@@ -20,7 +20,7 @@ export default function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          Raghda Al-Shaikhli
+          Raghda Alizz Al-Shaikhli
         </a>
       </p>
     </div>
