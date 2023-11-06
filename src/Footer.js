@@ -14,7 +14,7 @@ export default function Footer() {
         >
           open-sourced{" "}
         </a>
-        and coded by{" "}
+        and was coded by{" "}
         <a
           className="linkedinProfile"
           href="https://www.linkedin.com/in/raghdaalizz"
