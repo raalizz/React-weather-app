@@ -11,7 +11,7 @@ export default function Footer() {
           target="_blank"
           rel="noreferrer"
         >
-          open-source{" "}
+          open-sourced{" "}
         </a>
         and coded by{" "}
         <a
