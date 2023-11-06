@@ -4,15 +4,24 @@ export default function Footer() {
   return (
     <div className="Footer">
       <p>
+        This project is{" "}
         <a
           className="githubLink"
           href="https://github.com/raalizz/react-weather-app"
           target="_blank"
           rel="noreferrer"
         >
-          open-source code{" "}
+          open-source{" "}
         </a>
-        by Raghda Al-Shaikhli
+        and coded by{" "}
+        <a
+          className="linkedinProfile"
+          href="https://www.linkedin.com/in/raghdaalizz"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Raghda Al-Shaikhli
+        </a>
       </p>
     </div>
   );
