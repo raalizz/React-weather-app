@@ -69,15 +69,15 @@ export default function Weather(props) {
 
   const tempInfo = (
     <div className="row">
-      <div className="col-sm-6 mt-4">
+      <div className="col-sm-6">
         <h1>{city} </h1>
         <ul>
           <li> Tuesday 01:02</li>
           <li>{weather.description}</li>
         </ul>
       </div>
-      <div className="col-sm-3 mt-4">{weather.icon}</div>
-      <div className="col-sm-3 mt-4">
+      <div className="col-sm-3 ">{weather.icon}</div>
+      <div className="col-sm-3 ">
         <span className="units">
           <a href="/" className="active">
             ˚C{" "}

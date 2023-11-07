@@ -16,14 +16,14 @@ body {
   box-shadow: var(--box-shadow);
   border: 1px solid rgba(255, 255, 255, 0.3);
   max-height: 490px;
-  max-width: 800px;
+  max-width: 730px;
   margin-top: 60px;
 }
 form {
   padding: 20px;
 }
 .searchBar {
-  width: 550px;
+  width: 500px;
   padding: 12px;
   background-color: var(--primary-color);
   border: none;
@@ -32,7 +32,7 @@ form {
 .search-btn {
   display: flex;
   position: relative;
-  right: 10px;
+  right: 30px;
   bottom: -20px;
   padding: 12px;
   font-size: 15px;
@@ -45,8 +45,8 @@ form {
 .location-btn {
   display: flex;
   position: relative;
-  left: -20px;
-  bottom: -20px;
+  top: -68px;
+  right: -620px;
   padding: 15px;
   border: 1px solid #fff;
   border-radius: 5px;
