@@ -71,7 +71,10 @@ export default function Weather(props) {
     <div className="row">
       <div className="col-sm-6 mt-4">
         <h1>{city} </h1>
-        <h6> {weather.description}</h6>
+        <ul>
+          <li> Tuesday 01:02</li>
+          <li>{weather.description}</li>
+        </ul>
       </div>
       <div className="col-sm-3 mt-4">{weather.icon}</div>
       <div className="col-sm-3 mt-4">
