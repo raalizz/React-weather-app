@@ -3,7 +3,10 @@
   --primary-color: #f6eeea;
   --secondary-color: #64462e;
 }
-
+body {
+  background-color: var(--primary-color);
+  font-family: "PT Mono", monospace;
+}
 .wrapper {
   padding: 20px 0;
 }
