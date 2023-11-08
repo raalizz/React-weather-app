@@ -97,21 +97,21 @@ export default function Weather(props) {
         <div>
           <i className="fa-solid fa-temperature-three-quarters forecastIcons"></i>
           <br />
-          <strong>{weather.temperature}</strong>˚C
+          <strong>{weather.temperature}˚C</strong>
           <br />
           <h7>Feels like</h7>
         </div>
         <div>
           <i className="fa-solid fa-droplet forecastIcons"></i>
           <br />
-          <strong>{weather.humidity}</strong>%
+          <strong>{weather.humidity} %</strong>
           <br />
           <h7>Humidity</h7>
         </div>
         <div>
           <i className="fa-solid fa-wind forecastIcons"></i>
           <br />
-          <strong>{weather.wind}</strong>m/s
+          <strong>{weather.wind} m/s</strong>
           <br />
           <h7>Wind </h7>
         </div>
