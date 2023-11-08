@@ -114,6 +114,13 @@ export default function Weather(props) {
           <br />
           <h7>Wind </h7>
         </div>
+        <div>
+          <i class="fa-solid fa-umbrella forecastIcons"></i>
+          <br />
+          <strong> {weather.precipitation}</strong> %
+          <br />
+          <h7> Precipitation </h7>
+        </div>
       </div>
     </div>
   );
