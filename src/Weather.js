@@ -24,6 +24,7 @@ export default function Weather(props) {
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
+      clouds: response.data.clouds.all,
       description: response.data.weather[0].description,
       icon: (
         <ReactAnimatedWeather
@@ -115,11 +116,11 @@ export default function Weather(props) {
           <h7>Wind </h7>
         </div>
         <div>
-          <i class="fa-solid fa-umbrella forecastIcons"></i>
+          <i class="fa-solid fa-cloud forecastIcons"></i>
           <br />
-          <strong> {weather.precipitation}</strong> %
+          <strong> {weather.clouds}</strong>
           <br />
-          <h7> Precipitation </h7>
+          <h7> Clouds </h7>
         </div>
       </div>
     </div>
