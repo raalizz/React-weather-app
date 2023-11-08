@@ -22,7 +22,7 @@ body {
   margin: 60px auto 0;
   padding: 16px;
 }
-form {
+.Weather form {
   padding: 20px 20px -10px 20px;
 }
 .searchBar {
@@ -92,7 +92,7 @@ h1 {
 .forecast-container {
   background-color: var(--primary-color);
   padding: 20px;
-  margin: 30px;
+  margin: 20px;
   border-radius: 5px;
 }
 .forecast {
