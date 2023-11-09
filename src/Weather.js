@@ -42,51 +42,59 @@ export default function Weather(props) {
   }
 
   const form = (
-    <div className="row">
-      <div className="col-sm">
-        <form onSumbit={handleSubmit}>
-          <input
-            type="search"
-            placeholder="Search a city"
-            onChange={updateCity}
-            autocomplete="off"
-            className="searchBar"
-          />
-        </form>
-      </div>
-      <div className="col-sm">
-        <button className="search-btn">
-          <h7 className="searchFont">Search</h7>
-        </button>
-      </div>
-      <div className="col-sm">
-        <button className="location-btn">
-          {" "}
-          <i className="fa-solid fa-location-crosshairs locationIcon"></i>{" "}
-        </button>
+    <div className="form-container">
+      <div className="row">
+        <div className="col-sm">
+          <form onSumbit={handleSubmit}>
+            <input
+              type="search"
+              placeholder="Search a city"
+              onChange={updateCity}
+              className="searchBar"
+            />
+          </form>
+        </div>
+        <div className="col-sm">
+          <button className="search-btn">Search</button>
+        </div>
+        <div className="col-sm">
+          <button className="location-btn">
+            {" "}
+            <i className="fa-solid fa-location-crosshairs locationIcon"></i>{" "}
+          </button>
+        </div>
       </div>
     </div>
   );
 
   const tempInfo = (
-    <div className="row">
-      <div className="col-sm-6">
-        <h1>{city} </h1>
-        <ul>
-          <li> Tuesday 01:02</li>
-          <li>{weather.description}</li>
-        </ul>
-      </div>
-      <div className="col-sm-3 ">{weather.icon}</div>
-      <div className="col-sm-3 ">
-        <span className="units">
-          <a href="/" className="active">
-            ˚C{" "}
-          </a>{" "}
-          |<a href="/">˚F</a>
-        </span>
-        <br />
-        <h7> {weather.temperature} </h7>
+    <div className="tempInfo-container">
+      <div className="row">
+        <div className="col-sm">
+          <h1>{city} </h1>
+          <ul>
+            <li> Tuesday 01:02</li>
+            <li>{weather.description}</li>
+          </ul>
+        </div>
+        <div className="col-sm">
+          <ReactAnimatedWeather
+            icon="RAIN"
+            color="Black"
+            size={60}
+            animate={true}
+          />
+        </div>
+        <div className="col-sm ">
+          <span className="units">
+            <a href="/" className="active">
+              ˚C{" "}
+            </a>{" "}
+            |<a href="/">˚F</a>
+          </span>
+          <br />
+          <h7> {weather.temperature} </h7>
+        </div>
       </div>
     </div>
   );
@@ -144,21 +152,23 @@ export default function Weather(props) {
         <div className="container">
           <div className="wrapper">
             {form}
-            <div className="row">
-              <div className="col-sm-6 mt-4">
-                <h1>{props.city} </h1>
-                <h6> {weather.description}</h6>
-              </div>
-              <div className="col-sm-3 mt-4">{weather.icon}</div>
-              <div className="col-sm-3 mt-4">
-                <span className="units">
-                  <a href="/" className="active">
-                    ˚C{" "}
-                  </a>{" "}
-                  |<a href="/">˚F</a>
-                </span>
-                <br />
-                <h7> {weather.temperature} </h7>
+            <div className="tempInfo-container">
+              <div className="row">
+                <div className="col-sm mt-4">
+                  <h1>{props.city} </h1>
+                  <h6> {weather.description}</h6>
+                </div>
+                <div className="col-sm  mt-4">{weather.icon}</div>
+                <div className="col-sm mt-4">
+                  <span className="units">
+                    <a href="/" className="active">
+                      ˚C{" "}
+                    </a>{" "}
+                    |<a href="/">˚F</a>
+                  </span>
+                  <br />
+                  <h7> {weather.temperature} </h7>
+                </div>
               </div>
             </div>
             {forecastInfo}
