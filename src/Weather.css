@@ -1,10 +1,12 @@
 :root {
   --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  --primary-color: #f6eeea;
-  --secondary-color: #64462e;
+  --primary-color: #faf6d0;
+  --secondary-color: #205682;
+  --third-color: #aedceb;
+  --fourth-color: #cc6b49;
 }
 body {
-  background-color: var(--primary-color);
+  background-image: var(--primary-color);
   font-family: Arial, sans-serif;
   color: var(--secondary-color);
 }
@@ -13,7 +15,7 @@ body {
   padding: 20px 0;
 }
 .container {
-  background-color: #fff;
+  background-color: var(--third-color);
   border-radius: 5px;
   box-shadow: var(--box-shadow);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -80,10 +82,10 @@ body {
 h1 {
   font-size: 40px;
   font-weight: bolder;
-  color: #000;
+  color: var(--fourth-color);
 }
 .Weather .active {
-  color: #5c5757;
+  color: var(--secondary-color);
   cursor: default;
   font-size: large;
   text-decoration: none;
@@ -94,7 +96,7 @@ h1 {
 }
 .Weather a {
   text-decoration: none;
-  color: #b4b3cc;
+  color: var(--fourth-color);
 }
 
 .forecast-container {
