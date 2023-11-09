@@ -157,6 +157,9 @@ h1 {
     display: flex;
     position: relative;
     top: -80px;
-    left: 250px;
+    left: 270px;
+  }
+  .forecast-container {
+    margin-top: -60px;
   }
 }
