@@ -7,30 +7,26 @@ import "./Weather.css";
 
 export default function Weather(props) {
   const [city, setCity] = useState("");
-  const [weather, setWeather] = useState({});
-  const [loaded, setLoaded] = useState(false);
+  const [weather, setWeather] = useState({ loaded: false });
 
   function handleSubmit(event) {
     event.preventDefault();
-    const apiKey = "c8735bb7e8e2f8d8a38c7501f3cd47d3";
-    const units = "metric";
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(displayWeather);
   }
 
   function displayWeather(response) {
-    setLoaded(true);
     setWeather({
+      loaded: true,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       clouds: response.data.clouds.all,
       description: response.data.weather[0].description,
+      date: "Tuesday 01:02 PM",
       icon: (
         <ReactAnimatedWeather
           icon="RAIN"
-          color="Black"
-          size={60}
+          color="#205682"
+          size={50}
           animate={true}
         />
       ),
@@ -70,30 +66,28 @@ export default function Weather(props) {
   const tempInfo = (
     <div className="tempInfo-container">
       <div className="row">
-        <div className="col-sm">
+        <div className="col-sm-7 ">
           <h1>{city} </h1>
-          <ul>
-            <li> Tuesday 01:02</li>
-            <li>{weather.description}</li>
-          </ul>
+
+          <li>Last updated: {weather.date} </li>
+          <li className="text-capitalize">{weather.description}</li>
         </div>
-        <div className="col-sm">
-          <ReactAnimatedWeather
-            icon="RAIN"
-            color="Black"
-            size={60}
-            animate={true}
-          />
-        </div>
-        <div className="col-sm ">
+        <div className="col-sm-2 animatedIcon">{weather.icon}</div>
+        <div className="col-sm-3 ">
+          <strong>
+            {" "}
+            <h7 className="tempNumber">
+              {" "}
+              {Math.round(weather.temperature)}{" "}
+            </h7>{" "}
+          </strong>
+
           <span className="units">
             <a href="/" className="active">
               ˚C{" "}
             </a>{" "}
             |<a href="/">˚F</a>
           </span>
-          <br />
-          <h7> {weather.temperature} </h7>
         </div>
       </div>
     </div>
@@ -105,7 +99,7 @@ export default function Weather(props) {
         <div>
           <i className="fa-solid fa-temperature-three-quarters forecastIcons"></i>
           <br />
-          <strong>{weather.temperature}˚C</strong>
+          <strong>{Math.round(weather.temperature)}˚C</strong>
           <br />
           <h7>Feels like</h7>
         </div>
@@ -128,13 +122,13 @@ export default function Weather(props) {
           <br />
           <strong> {weather.clouds}</strong>
           <br />
-          <h7> Clouds </h7>
+          <h7> Clouds</h7>
         </div>
       </div>
     </div>
   );
 
-  if (loaded) {
+  if (weather.loaded) {
     return (
       <div className="Weather">
         <div className="container">
@@ -147,34 +141,9 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    return (
-      <div className="Weather">
-        <div className="container">
-          <div className="wrapper">
-            {form}
-            <div className="tempInfo-container">
-              <div className="row">
-                <div className="col-sm mt-4">
-                  <h1>{props.city} </h1>
-                  <h6> {weather.description}</h6>
-                </div>
-                <div className="col-sm  mt-4">{weather.icon}</div>
-                <div className="col-sm mt-4">
-                  <span className="units">
-                    <a href="/" className="active">
-                      ˚C{" "}
-                    </a>{" "}
-                    |<a href="/">˚F</a>
-                  </span>
-                  <br />
-                  <h7> {weather.temperature} </h7>
-                </div>
-              </div>
-            </div>
-            {forecastInfo}
-          </div>
-        </div>
-      </div>
-    );
+    const apiKey = "c8735bb7e8e2f8d8a38c7501f3cd47d3";
+    const units = "metric";
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(displayWeather);
   }
 }
