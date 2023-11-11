@@ -54,13 +54,13 @@ export default function Weather(props) {
             <input
               type="search"
               placeholder="Search a city"
-              onChange={updateCity}
               className="searchBar"
+              onChange={updateCity}
             />
+            <div className="col-sm">
+              <input type="submit" value="Search" className="search-btn" />
+            </div>
           </form>
-        </div>
-        <div className="col-sm">
-          <button className="search-btn">Search</button>
         </div>
         <div className="col-sm">
           <button className="location-btn">
@@ -76,7 +76,7 @@ export default function Weather(props) {
     <div className="tempInfo-container">
       <div className="row">
         <div className="col-sm-7 ">
-          <h1>{city} </h1>
+          <h1>{city}</h1>
 
           <li>
             Last updated: <FormattedDate date={weather.date} />

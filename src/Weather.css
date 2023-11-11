@@ -44,7 +44,7 @@ body {
   margin: 0 auto;
   margin-top: -100px;
 }
-.Weather form {
+.form-container form {
   padding: 20px 20px -10px 20px;
 }
 .searchBar {
@@ -58,23 +58,23 @@ body {
 .search-btn {
   display: flex;
   position: relative;
-  right: 10px;
-  top: -1px;
+  left: 460px;
+  top: -48px;
   padding: 12px;
   font-size: 15px;
   border-radius: 5px;
   transition: all 200ms ease-in-out;
   color: #f5feff;
   background: var(--secondary-color);
-  border: 1px solid #fff;
+  border: 1px solid var(--fourth-color);
 }
 .location-btn {
   display: flex;
   position: relative;
   top: -1px;
-  left: -20px;
-  padding: 15px;
-  border: 1px solid #fff;
+  left: 80px;
+  padding: 16px;
+  border: 1px solid var(--fourth-color);
   border-radius: 5px;
   transition: all 200ms ease-in-out;
   color: #fff;
@@ -92,7 +92,7 @@ body {
 }
 
 .tempInfo-container {
-  margin-top: 60px;
+  margin-top: 30px;
   margin-left: 20px;
 }
 .tempInfo-container h1 {
@@ -191,9 +191,9 @@ body {
     left: 230px;
   }
   .location-btn {
-    padding: 10px;
+    padding: 11px;
     font-size: 14px;
-    top: -77px;
+    top: -78px;
     left: 300px;
   }
   .tempInfo-container {
