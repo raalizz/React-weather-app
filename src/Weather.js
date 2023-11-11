@@ -7,11 +7,19 @@ import ReactAnimatedWeather from "react-animated-weather";
 import "./Weather.css";
 
 export default function Weather(props) {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState(props.city);
   const [weather, setWeather] = useState({ loaded: false });
+
+  function search() {
+    const apiKey = "c8735bb7e8e2f8d8a38c7501f3cd47d3";
+    const units = "metric";
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(displayWeather);
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
+    search();
   }
 
   function displayWeather(response) {
@@ -146,9 +154,6 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    const apiKey = "c8735bb7e8e2f8d8a38c7501f3cd47d3";
-    const units = "metric";
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(displayWeather);
+    search();
   }
 }

@@ -113,14 +113,15 @@ body {
 .tempInfo-container .tempNumber {
   display: flex;
   position: relative;
-  top: -60px;
-  font-size: 80px;
+  top: -45px;
+  font-size: 65px;
 }
 .tempInfo-container .units {
   display: flex;
   position: relative;
-  left: 50px;
-  top: -155px;
+  left: 55px;
+  top: -140px;
+  vertical-align: top;
 }
 .tempInfo-container .active {
   color: var(--secondary-color);
@@ -171,7 +172,7 @@ body {
     width: 420px;
   }
   .tempInfo-container {
-    margin-top: 30px;
+    margin-top: 60px;
   }
   .tempInfo-container h1 {
     font-size: 25px;
