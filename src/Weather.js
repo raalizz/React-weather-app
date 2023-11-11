@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 import "bootstrap/dist/css/bootstrap.css";
 import ReactAnimatedWeather from "react-animated-weather";
 
@@ -14,7 +15,6 @@ export default function Weather(props) {
   }
 
   function displayWeather(response) {
-    console.log(response.data);
     setWeather({
       loaded: true,
       temperature: response.data.main.temp,
@@ -22,7 +22,7 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       clouds: response.data.clouds.all,
       description: response.data.weather[0].description,
-      date: "Tuesday 01:02 PM",
+      date: new Date(response.data.dt * 1000),
       icon: (
         <ReactAnimatedWeather
           icon="RAIN"
@@ -42,7 +42,7 @@ export default function Weather(props) {
     <div className="form-container">
       <div className="row">
         <div className="col-sm">
-          <form onSumbit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <input
               type="search"
               placeholder="Search a city"
@@ -70,17 +70,19 @@ export default function Weather(props) {
         <div className="col-sm-7 ">
           <h1>{city} </h1>
 
-          <li>Last updated: {weather.date} </li>
+          <li>
+            Last updated: <FormattedDate date={weather.date} />
+          </li>
           <li className="text-capitalize">{weather.description}</li>
         </div>
         <div className="col-sm-2 animatedIcon">{weather.icon}</div>
         <div className="col-sm-3 ">
           <strong>
             {" "}
-            <h7 className="tempNumber">
+            <h2 className="tempNumber">
               {" "}
               {Math.round(weather.temperature)}{" "}
-            </h7>{" "}
+            </h2>{" "}
           </strong>
 
           <span className="units">
@@ -102,28 +104,28 @@ export default function Weather(props) {
           <br />
           <strong>{Math.round(weather.temperature)}˚C</strong>
           <br />
-          <h7>Feels like</h7>
+          <h6>Feels like</h6>
         </div>
         <div>
           <i className="fa-solid fa-droplet forecastIcons"></i>
           <br />
           <strong>{weather.humidity} %</strong>
           <br />
-          <h7>Humidity</h7>
+          <h6>Humidity</h6>
         </div>
         <div>
           <i className="fa-solid fa-wind forecastIcons"></i>
           <br />
           <strong>{weather.wind} m/s</strong>
           <br />
-          <h7>Wind </h7>
+          <h6>Wind </h6>
         </div>
         <div>
-          <i class="fa-solid fa-cloud forecastIcons"></i>
+          <i className="fa-solid fa-cloud forecastIcons"></i>
           <br />
           <strong> {weather.clouds}</strong>
           <br />
-          <h7> Clouds</h7>
+          <h6> Clouds</h6>
         </div>
       </div>
     </div>
@@ -133,8 +135,8 @@ export default function Weather(props) {
     return (
       <div className="Weather">
         <div className="container">
-          <i class="fa-solid fa-cloud outerIcon1"></i>
-          <i class="fa-solid fa-cloud outerIcon2"></i>
+          <i className="fa-solid fa-cloud outerIcon1"></i>
+          <i className="fa-solid fa-cloud outerIcon2"></i>
           <div className="wrapper">
             {form}
             {tempInfo}
