@@ -24,6 +24,20 @@ body {
   margin: 60px auto 0;
   padding: 16px;
 }
+.outerIcon1 {
+  display: flex;
+  position: relative;
+  top: -60px;
+  left: -20px;
+  font-size: 50px;
+}
+.outerIcon2 {
+  display: flex;
+  position: relative;
+  top: -100px;
+  left: 35px;
+  font-size: 40px;
+}
 .form-container {
   display: flex;
   justify-content: space-between;
@@ -144,6 +158,12 @@ body {
   .container {
     width: 100%;
     max-height: 100%;
+  }
+  .outerIcon1 {
+    left: -20px;
+  }
+  .outerIcon2 {
+    left: 35px;
   }
   .searchBar {
     width: 420px;

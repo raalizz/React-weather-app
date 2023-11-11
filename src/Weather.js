@@ -14,6 +14,7 @@ export default function Weather(props) {
   }
 
   function displayWeather(response) {
+    console.log(response.data);
     setWeather({
       loaded: true,
       temperature: response.data.main.temp,
@@ -132,6 +133,8 @@ export default function Weather(props) {
     return (
       <div className="Weather">
         <div className="container">
+          <i class="fa-solid fa-cloud outerIcon1"></i>
+          <i class="fa-solid fa-cloud outerIcon2"></i>
           <div className="wrapper">
             {form}
             {tempInfo}
