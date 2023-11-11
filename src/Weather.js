@@ -116,7 +116,7 @@ export default function Weather(props) {
         <div>
           <i className="fa-solid fa-wind forecastIcons"></i>
           <br />
-          <strong>{weather.wind} m/s</strong>
+          <strong>{Math.round(weather.wind)} m/s</strong>
           <br />
           <h6>Wind </h6>
         </div>
