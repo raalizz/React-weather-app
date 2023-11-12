@@ -25,6 +25,7 @@ export default function Weather(props) {
   function displayWeather(response) {
     setWeather({
       loaded: true,
+      city: response.data.name,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
@@ -76,7 +77,7 @@ export default function Weather(props) {
     <div className="tempInfo-container">
       <div className="row">
         <div className="col-sm-7 ">
-          <h1>{city}</h1>
+          <h1>{weather.city}</h1>
 
           <li>
             Last updated: <FormattedDate date={weather.date} />
