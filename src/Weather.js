@@ -27,7 +27,7 @@ export default function Weather(props) {
       loaded: true,
       city: response.data.name,
       temperature: response.data.main.temp,
-      feels_like: response.data.temperature.feels_like,
+      feels_like: response.data.main.feels_like,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       clouds: response.data.clouds.all,
@@ -80,7 +80,7 @@ export default function Weather(props) {
         </div>
 
         <div className="col-sm-2 animatedIcon">
-          <WeatherIcon code={props.data.icon} />
+          <WeatherIcon code={weather.icon} />
         </div>
         <div className="col-sm-3 ">
           <strong>
