@@ -126,7 +126,7 @@ body {
   vertical-align: top;
 }
 .tempInfo-container .active {
-  color: var(--secondary-color);
+  color: var(--fourth-color);
   cursor: default;
   font-size: large;
   text-decoration: none;
