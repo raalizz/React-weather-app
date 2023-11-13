@@ -109,7 +109,9 @@ body {
   top: -30px;
   font-size: 13px;
 }
-
+.tempInfo-container .animatedIcon {
+  color: #205682;
+}
 .tempInfo-container .tempNumber {
   display: flex;
   position: relative;

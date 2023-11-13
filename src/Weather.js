@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
 import "bootstrap/dist/css/bootstrap.css";
-import ReactAnimatedWeather from "react-animated-weather";
+import WeatherIcon from "./WeatherIcon";
 
 import "./Weather.css";
 
@@ -32,14 +32,7 @@ export default function Weather(props) {
       clouds: response.data.clouds.all,
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
-      icon: (
-        <ReactAnimatedWeather
-          icon="RAIN"
-          color="#205682"
-          size={50}
-          animate={true}
-        />
-      ),
+      icon: response.data.weather[0].icon,
     });
   }
 
@@ -84,7 +77,10 @@ export default function Weather(props) {
           </li>
           <li className="text-capitalize">{weather.description}</li>
         </div>
-        <div className="col-sm-2 animatedIcon">{weather.icon}</div>
+
+        <div className="col-sm-2 animatedIcon">
+          <WeatherIcon code={props.data.icon} />
+        </div>
         <div className="col-sm-3 ">
           <strong>
             {" "}
