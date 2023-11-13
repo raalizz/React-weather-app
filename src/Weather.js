@@ -27,6 +27,7 @@ export default function Weather(props) {
       loaded: true,
       city: response.data.name,
       temperature: response.data.main.temp,
+      feels_like: response.data.temperature.feels_like,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       clouds: response.data.clouds.all,
@@ -107,7 +108,7 @@ export default function Weather(props) {
         <div>
           <i className="fa-solid fa-temperature-three-quarters forecastIcons"></i>
           <br />
-          <strong>{Math.round(weather.temperature)}˚C</strong>
+          <strong>{Math.round(weather.feels_like)}˚C</strong>
           <br />
           <h6>Feels like</h6>
         </div>
