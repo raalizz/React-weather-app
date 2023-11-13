@@ -98,7 +98,7 @@ body {
 .tempInfo-container h1 {
   display: flex;
   position: relative;
-  top: -30px;
+  top: -50px;
   font-size: 40px;
   font-weight: bolder;
   color: var(--fourth-color);
@@ -106,11 +106,11 @@ body {
 .tempInfo-container li {
   display: flex;
   position: relative;
-  top: -30px;
+  top: -55px;
   font-size: 13px;
 }
 .tempInfo-container .animatedIcon {
-  color: #205682;
+  margin-top: -40px;
 }
 .tempInfo-container .tempNumber {
   display: flex;
@@ -144,7 +144,7 @@ body {
   background-color: var(--primary-color);
   padding: 20px;
   margin: 20px;
-  margin-top: -40px;
+  margin-top: -60px;
   border-radius: 5px;
 }
 
