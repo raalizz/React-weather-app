@@ -98,7 +98,7 @@ export default function Weather(props) {
           <br />
           <strong>{Math.round(weather.feels_like)}˚C</strong>
           <br />
-          <h6>Feels like</h6>
+          <h6>Feels Like</h6>
         </div>
         <div>
           <i className="fa-solid fa-droplet forecastIcons"></i>
