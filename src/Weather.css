@@ -211,14 +211,14 @@ body {
     display: flex;
     position: relative;
     top: -80px;
-    left: 180px;
+    left: 195px;
   }
   .tempInfo-container .tempNumber {
     font-size: 50px;
     display: flex;
     position: relative;
     top: -140px;
-    left: 250px;
+    left: 265px;
   }
   .tempInfo-container .units {
     display: flex;
