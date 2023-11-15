@@ -116,8 +116,7 @@ export default function Weather(props) {
           <i className="fa-solid fa-temperature-three-quarters forecastIcons"></i>
           <br />
           <strong>
-            {Math.round(feels_like)}
-            {unitSymbols[unit]}
+            {Math.round(feels_like)} {unitSymbols[unit]}
           </strong>
           <br />
           <h6>Feels Like</h6>
