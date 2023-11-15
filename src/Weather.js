@@ -13,6 +13,10 @@ export default function Weather(props) {
 
   const [unit, setUnit] = useState("celsius");
   const feels_like = getFeelsLike();
+  const unitSymbols = {
+    celsius: "˚C",
+    fahrenheit: "˚F",
+  };
 
   function getFeelsLike() {
     if (unit === "celsius") {
@@ -111,7 +115,10 @@ export default function Weather(props) {
         <div>
           <i className="fa-solid fa-temperature-three-quarters forecastIcons"></i>
           <br />
-          <strong>{Math.round(feels_like)}˚C</strong>
+          <strong>
+            {Math.round(feels_like)}
+            {unitSymbols[unit]}
+          </strong>
           <br />
           <h6>Feels Like</h6>
         </div>
