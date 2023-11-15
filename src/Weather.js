@@ -11,6 +11,17 @@ export default function Weather(props) {
   const [city, setCity] = useState(props.city);
   const [weather, setWeather] = useState({ loaded: false });
 
+  const [unit, setUnit] = useState("celsius");
+  const feels_like = getFeelsLike();
+
+  function getFeelsLike() {
+    if (unit === "celsius") {
+      return Math.round(weather.feels_like);
+    } else {
+      return (Math.round(weather.feels_like) * 9) / 5 + 32;
+    }
+  }
+
   function search() {
     const apiKey = "c8735bb7e8e2f8d8a38c7501f3cd47d3";
     const units = "metric";
@@ -84,7 +95,11 @@ export default function Weather(props) {
           <WeatherIcon code={weather.icon} />
         </div>
         <div className="col-sm-3 ">
-          <WeatherTemperature celsius={weather.temperature} />
+          <WeatherTemperature
+            unit={unit}
+            setUnit={setUnit}
+            celsius={weather.temperature}
+          />
         </div>
       </div>
     </div>
@@ -96,7 +111,7 @@ export default function Weather(props) {
         <div>
           <i className="fa-solid fa-temperature-three-quarters forecastIcons"></i>
           <br />
-          <strong>{Math.round(weather.feels_like)}˚C</strong>
+          <strong>{Math.round(feels_like)}˚C</strong>
           <br />
           <h6>Feels Like</h6>
         </div>
