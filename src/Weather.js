@@ -4,6 +4,7 @@ import FormattedDate from "./FormattedDate";
 import "bootstrap/dist/css/bootstrap.css";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
+import DailyForecast from "./DailyForecast";
 
 import "./Weather.css";
 
@@ -96,7 +97,7 @@ export default function Weather(props) {
         </div>
 
         <div className="col-sm-2 animatedIcon">
-          <WeatherIcon code={weather.icon} />
+          <WeatherIcon code={weather.icon} size={60} />
         </div>
         <div className="col-sm-3 ">
           <WeatherTemperature
@@ -156,6 +157,7 @@ export default function Weather(props) {
             {form}
             {tempInfo}
             {forecastInfo}
+            <DailyForecast />
           </div>
         </div>
       </div>
