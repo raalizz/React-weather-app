@@ -116,33 +116,42 @@ export default function Weather(props) {
       <div className="forecast">
         <div>
           <i className="fa-solid fa-temperature-three-quarters forecastIcons"></i>
-          <br />
-          <strong>
-            {Math.round(feels_like)} {unitSymbols[unit]}
-          </strong>
-          <br />
-          <h6>Feels Like</h6>
+          <div>
+            <strong>
+              {Math.round(feels_like)}
+              {unitSymbols[unit]}
+            </strong>
+          </div>
+          <div>
+            <h6>Feels Like</h6>
+          </div>
         </div>
         <div>
           <i className="fa-solid fa-droplet forecastIcons"></i>
-          <br />
-          <strong>{weather.humidity} %</strong>
-          <br />
-          <h6>Humidity</h6>
+          <div>
+            <strong>{weather.humidity} %</strong>
+          </div>
+          <div>
+            <h6>Humidity</h6>
+          </div>
         </div>
         <div>
           <i className="fa-solid fa-wind forecastIcons"></i>
-          <br />
-          <strong>{Math.round(weather.wind)} m/s</strong>
-          <br />
-          <h6>Wind </h6>
+          <div>
+            <strong>{Math.round(weather.wind)} m/s</strong>
+          </div>
+          <div>
+            <h6>Wind </h6>
+          </div>
         </div>
         <div>
           <i className="fa-solid fa-cloud forecastIcons"></i>
-          <br />
-          <strong> {weather.clouds}</strong>
-          <br />
-          <h6> Clouds</h6>
+          <div>
+            <strong> {weather.clouds}</strong>
+          </div>
+          <div>
+            <h6> Clouds</h6>
+          </div>
         </div>
       </div>
     </div>
