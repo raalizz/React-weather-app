@@ -42,6 +42,7 @@ export default function Weather(props) {
   function displayWeather(response) {
     setWeather({
       loaded: true,
+      coordinates: response.data.coord,
       city: response.data.name,
       temperature: response.data.main.temp,
       feels_like: response.data.main.feels_like,
@@ -157,7 +158,7 @@ export default function Weather(props) {
             {form}
             {tempInfo}
             {forecastInfo}
-            <DailyForecast />
+            <DailyForecast coordinates={weather.coordinates} />
           </div>
         </div>
       </div>
