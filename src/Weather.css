@@ -141,6 +141,7 @@ body {
 }
 
 .forecast-container {
+  text-align: center;
   background-color: var(--primary-color);
   padding: 20px;
   margin: 20px;
