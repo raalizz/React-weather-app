@@ -1,33 +1,38 @@
-import React from "react";
-import WeatherIcon from "./WeatherIcon";
+import React, { useState } from "react";
 import "./DailyForecast.css";
 import axios from "axios";
+import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function DailyForecast(props) {
-  const apiKey = "c8735bb7e8e2f8d8a38c7501f3cd47d3";
-  const longitude = props.coordinates.lon;
-  const latitude = props.coordinates.lat;
-  const units = "metric";
-  const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units};
-`;
-  axios.get(apiUrl).then(handleResponse);
+  let [loaded, setLoaded] = useState(false);
+  let [forecast, setForecast] = useState(null);
 
-  function handleResponse(response) {}
+  function handleResponse(response) {
+    setForecast(response.data.daily);
+    setLoaded(true);
+  }
 
-  return (
-    <div className="DailyForecast-Container">
-      <div className="DailyForecast">
-        <div className="row">
-          <div className="col-sm">
-            <div className="DailyForecast-day">Thu</div>
-            <WeatherIcon code="01d" size={36} />
-            <div className="DailyForecast-temperatures">
-              <span className="DailyForecast-temperature-max"> 19˚ </span>
-              <span className="DailyForecast-temperature-min"> 10˚</span>
+  if (loaded) {
+    return (
+      <div className="DailyForecast-Container">
+        <div className="DailyForecast">
+          <div className="row">
+            <div className="col-sm">
+              <WeatherForecastDay data={forecast[0]} />
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    const apiKey = "ed238469f9b5e9d801834270e65449bc";
+    const longitude = props.coordinates.lon;
+    const latitude = props.coordinates.lat;
+    const units = "metric";
+    const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+
+    axios.get(apiUrl).then(handleResponse);
+
+    return null;
+  }
 }
