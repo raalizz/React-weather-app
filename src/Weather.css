@@ -189,15 +189,15 @@ body {
     padding: 10px;
   }
   .search-btn {
-    padding: 7px;
+    padding: 10px;
     font-size: 14px;
-    top: -40px;
+    top: -44px;
     left: 230px;
   }
   .location-btn {
-    padding: 11px;
+    padding: 14px;
     font-size: 14px;
-    top: 3px;
+    top: -1px;
     left: 260px;
   }
   .tempInfo-container {
