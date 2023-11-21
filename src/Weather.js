@@ -181,7 +181,7 @@ export default function Weather(props) {
             {form}
             {tempInfo}
             {forecastInfo}
-            <DailyForecast coordinates={weather.coordinates} />
+            <DailyForecast coordinates={weather.coordinates} unit={unit} />
           </div>
         </div>
       </div>
